@@ -100,6 +100,7 @@ variable "bgp_as_spines" {
 variable "tenant_network" {
   description = "list of network / subnet tenants names, cidr_newbits permit to split network in subnets per regions"
   type = map(object({
+    cidr = string
     cidr_newbits = number
   }))
 }

@@ -21,8 +21,14 @@ leafs_additionnal_tenant_peers = {
 
 
 tenant_network = {
-    "ntwk1" = {"cidr_newbits" = 4}
-    "ntwk2" = {"cidr_newbits" = 4}
+    "ntwk1" = {
+        "cidr" = "10.100.0.0/16"
+        "cidr_newbits" = 4
+    }
+    "ntwk2" = {
+        "cidr" = "10.200.0.0/16"
+        "cidr_newbits" = 4
+    }
 }
 
 vyos_image_name = "vyos-1.3.4-cloud-init"
