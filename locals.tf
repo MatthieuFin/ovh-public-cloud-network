@@ -57,44 +57,44 @@ locals {
   }
 
   vyos_endpoints = {
-    for region in keys(var.available_region):
-        region => {
-            "leaf-1" = {
-                "endpoint" = format(
-                  "https://%s:11443",
-                  cidrhost(
-                    cidrsubnet(
-                      var.ipmi.cidr_prefix,
-                      var.ipmi.cidr_newbits,
-                      var.available_region[region].offset
-                    ),
-                    11)
-                )
-            },
-            "leaf-2" = {
-                "endpoint" = format(
-                  "https://%s:11443",
-                  cidrhost(
-                    cidrsubnet(
-                      var.ipmi.cidr_prefix,
-                      var.ipmi.cidr_newbits,
-                      var.available_region[region].offset
-                    ),
-                    12)
-                )
-            }
-            "spine-1" = {
-                "endpoint" = format(
-                  "https://%s:11443",
-                  cidrhost(
-                    cidrsubnet(
-                      var.ipmi.cidr_prefix,
-                      var.ipmi.cidr_newbits,
-                      var.available_region[region].offset
-                    ),
-                    100)
-                )
-            }
-        }
+    for region in keys(var.available_region) :
+    region => {
+      "leaf-1" = {
+        "endpoint" = format(
+          "https://%s:11443",
+          cidrhost(
+            cidrsubnet(
+              var.ipmi.cidr_prefix,
+              var.ipmi.cidr_newbits,
+              var.available_region[region].offset
+            ),
+          11)
+        )
+      },
+      "leaf-2" = {
+        "endpoint" = format(
+          "https://%s:11443",
+          cidrhost(
+            cidrsubnet(
+              var.ipmi.cidr_prefix,
+              var.ipmi.cidr_newbits,
+              var.available_region[region].offset
+            ),
+          12)
+        )
+      }
+      "spine-1" = {
+        "endpoint" = format(
+          "https://%s:11443",
+          cidrhost(
+            cidrsubnet(
+              var.ipmi.cidr_prefix,
+              var.ipmi.cidr_newbits,
+              var.available_region[region].offset
+            ),
+          100)
+        )
+      }
+    }
   }
 }

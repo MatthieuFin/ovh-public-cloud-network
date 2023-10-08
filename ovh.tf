@@ -3,7 +3,7 @@
 
 // Create network ntwk1 vlan 1100 on each cloud project tenants
 resource "ovh_cloud_project_network_private" "vlan-ntwk1" {
-  for_each = var.cloud_projects
+  for_each     = var.cloud_projects
   service_name = each.value
   vlan_id      = 2100
   name         = "ntwk1"
@@ -12,7 +12,7 @@ resource "ovh_cloud_project_network_private" "vlan-ntwk1" {
 
 // Create network ntwk2 vlan 1200 on each cloud project tenants
 resource "ovh_cloud_project_network_private" "vlan-ntwk2" {
-  for_each = var.cloud_projects
+  for_each     = var.cloud_projects
   service_name = each.value
   vlan_id      = 2200
   name         = "ntwk2"

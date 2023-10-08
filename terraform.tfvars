@@ -1,7 +1,7 @@
 
 cloud_projects = {
   PC1 = "xxx"
-  PC2   = "yyy"
+  PC2 = "yyy"
 }
 
 leafs_additionnal_tenant_peers = {
@@ -15,20 +15,20 @@ leafs_additionnal_tenant_peers = {
     }
   }
   "GRA11" = {}
-  "SBG5" = {}
+  "SBG5"  = {}
 }
 
 
 
 tenant_network = {
-    "ntwk1" = {
-        "cidr" = "10.100.0.0/16"
-        "cidr_newbits" = 4
-    }
-    "ntwk2" = {
-        "cidr" = "10.200.0.0/16"
-        "cidr_newbits" = 4
-    }
+  "ntwk1" = {
+    "cidr"         = "10.100.0.0/16"
+    "cidr_newbits" = 4
+  }
+  "ntwk2" = {
+    "cidr"         = "10.200.0.0/16"
+    "cidr_newbits" = 4
+  }
 }
 
 vyos_image_name = "vyos-1.3.4-cloud-init"
@@ -79,10 +79,10 @@ ipmi = {
 backbone = {
   "name" = "backbone"
   "leafs" = {
-      "loopback" = {
-        "cidr_prefix"         = "10.12.0.0/16"
-        "cidr_region_newbits" = 8
-      }
+    "loopback" = {
+      "cidr_prefix"         = "10.13.0.0/16"
+      "cidr_region_newbits" = 8
+    }
     "ibgp" = {
       "cidr_prefix"  = "10.10.0.0/24"
       "cidr_newbits" = 6
@@ -99,9 +99,9 @@ backbone = {
   }
   "spine" = {
     "loopback" = {
-      "cidr_prefix"         = "10.12.0.0/16"
+      "cidr_prefix"         = "10.13.0.0/16"
       "cidr_region_newbits" = 8
     }
   }
 }
-  
+

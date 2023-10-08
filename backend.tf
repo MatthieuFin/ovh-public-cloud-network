@@ -33,7 +33,7 @@ provider "openstack" {
   project_domain_name = var.openstack_project_domain_name
   user_domain_name    = var.openstack_user_domain_name
   // Public Cloud project 1
-  alias    = "PC1"
+  alias = "PC1"
 }
 
 provider "openstack" {
@@ -43,7 +43,7 @@ provider "openstack" {
   project_domain_name = var.openstack_project_domain_name
   user_domain_name    = var.openstack_user_domain_name
   // Public Cloud project 2
-  alias    = "PC2"
+  alias = "PC2"
 }
 
 provider "vyos" {

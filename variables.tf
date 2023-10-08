@@ -100,7 +100,7 @@ variable "bgp_as_spines" {
 variable "tenant_network" {
   description = "list of network / subnet tenants names, cidr_newbits permit to split network in subnets per regions"
   type = map(object({
-    cidr = string
+    cidr         = string
     cidr_newbits = number
   }))
 }
@@ -114,18 +114,18 @@ variable "leafs_additionnal_tenant_peers" {
       tenant_network = string
     }))
   )
-//  validation {
-//    condition = (
-//      length([for ip in keys(var.leafs_additionnal_tenant_peers) : ip if can(cidrnetmask(format("%s/32", ip)))]) == length(var.leafs_additionnal_tenant_peers)
-//    )
-//    error_message = "Keys should be bgp peer ip address"
-//  }
-//  validation {
-//    condition = (
-//      length([for as in [for peer in var.leafs_additionnal_tenant_peers : peer.remote-as] : as if(64512 <= as && as <= 65535)]) == length(var.leafs_additionnal_tenant_peers)
-//    )
-//    error_message = "BGP spines AS should be in BGP private range [64512-65535]"
-//  }
+  //  validation {
+  //    condition = (
+  //      length([for ip in keys(var.leafs_additionnal_tenant_peers) : ip if can(cidrnetmask(format("%s/32", ip)))]) == length(var.leafs_additionnal_tenant_peers)
+  //    )
+  //    error_message = "Keys should be bgp peer ip address"
+  //  }
+  //  validation {
+  //    condition = (
+  //      length([for as in [for peer in var.leafs_additionnal_tenant_peers : peer.remote-as] : as if(64512 <= as && as <= 65535)]) == length(var.leafs_additionnal_tenant_peers)
+  //    )
+  //    error_message = "BGP spines AS should be in BGP private range [64512-65535]"
+  //  }
   //validation {
   //    condition     = (
   //        length([for ntwk in [for peer in var.leafs_additionnal_tenant_peers : peer.tenant_network] : ntwk if contains(keys(var.tenant_network), ntwk)]) == length(var.leafs_additionnal_tenant_peers)
