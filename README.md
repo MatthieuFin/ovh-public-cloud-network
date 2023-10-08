@@ -21,12 +21,14 @@ Because of lack of visibility we setup manually router VMs to replace openstack 
 Problem with this topology is that we don't have hich availibility in our network infrastructure, and we have to set mannually all network static router (:boring:)
 
 
-### Resolution
+## Resolution
 
 Finally we choose to use a spine leaf network topoloy which permit us to have hig availibility and cherry on the cake to being able to do loabalancing actif actif on our services with bgp multipath and ECMP.
 
 ![Network schema L3 BGP](./doc/l3_infra_ovh.jpg)
 
 
+## bird configuration
 
+Example of [bird configuration](./bird/bird.conf) used on VM "HAproxy" to enable actif/actif loadbalancing
 
