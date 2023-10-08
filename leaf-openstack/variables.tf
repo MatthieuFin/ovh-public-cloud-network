@@ -2,8 +2,31 @@ variable "region" {
   description = "region to deploy spine-leaf stack"
   type        = string
   validation {
-    condition     = contains(["GRA9", "GRA11", "SBG5"], var.region)
-    error_message = "Allowed values for region are GRA9, GRA11, SBG5."
+    condition     = contains([
+        "SBG1",
+        "SBG3",
+        "SBG5",
+        "SBG7",
+        "GRA1",
+        "GRA3",
+        "GRA5",
+        "GRA7",
+        "GRA9",
+        "GRA11",
+        //"RBX",
+        "UK1",
+        "DE1",
+        "WAW1",
+        "BHS1",
+        "BHS2",
+        "BHS3",
+        "BHS5",
+        "VIN1",
+        "HIL1",
+        "SGP1",
+        "SYD1",
+    ], var.region)
+    error_message = "Region is not allowed."
   }
 }
 
